@@ -1,5 +1,3 @@
-
-````markdown
 # 🍳 Cloud Native Kitchen App
 
 <p align="center">
@@ -44,9 +42,6 @@ Containerized Application
    │
    ▼
 Kubernetes Deployment
-````
-
----
 
 # ✨ Key Features
 
