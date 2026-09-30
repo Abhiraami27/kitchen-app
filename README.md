@@ -1,37 +1,3 @@
-# 🍳 Cloud Native Kitchen App
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Cloud--Native-Application-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Kubernetes-Orchestration-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
-  <img src="https://img.shields.io/badge/DevOps-Deployment-8A2BE2?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/GitHub-Version%20Control-181717?style=for-the-badge&logo=github" />
-</p>
-
-<p align="center">
-  <b>A cloud-native kitchen application demonstrating containerization, API-driven architecture, Kubernetes orchestration, and DevOps deployment practices.</b>
-</p>
-
----
-
-## 📌 Overview
-
-**Cloud Native Kitchen App** is a modern application project designed around cloud-native development and deployment principles.
-
-The project separates the application into dedicated frontend, backend, deployment, and documentation components.
-
-It demonstrates how an application can be:
-
-- 🖥️ Developed as separate frontend and backend components
-- ⚙️ Exposed through APIs
-- 🐳 Containerized using Docker
-- ☸️ Deployed and orchestrated using Kubernetes
-- 🔧 Managed using DevOps practices
-- 📦 Structured for scalable cloud deployment
-
-The repository is organized around the following major components:
-
-```text
 Web UI
    │
    ▼
@@ -103,42 +69,8 @@ The project includes supporting documentation inside the `docs` directory as wel
                          │    KUBERNETES      │
                          │       k8s/          │
                          └─────────────────────┘
-```
 
----
-
-# 🔄 Application Workflow
-
-```text
-        User
-         │
-         ▼
-     Web Interface
-         │
-         ▼
-      API Request
-         │
-         ▼
-    Backend Services
-         │
-         ▼
-   Containerized App
-         │
-         ▼
- Kubernetes Workloads
-         │
-         ▼
- Application Response
-         │
-         ▼
-     Web Interface
-```
-
----
-
-# 📂 Project Structure
-
-```text
+✨ Project Structure
 kitchen-app/
 │
 ├── .github/
@@ -151,7 +83,7 @@ kitchen-app/
 │   └── Project documentation
 │
 ├── k8s/
-│   └── Kubernetes deployment and configuration
+│   └── Kubernetes deployment and configuration files
 │
 ├── web-ui/
 │   └── Frontend / Web user interface
@@ -160,488 +92,271 @@ kitchen-app/
 │   └── Cloud-native project documentation
 │
 └── README.md
-```
+🚀 Key Components
+🖥️ Web UI
 
----
+The web-ui directory contains the application's frontend.
 
-# 🧩 Component Description
+It is responsible for:
 
-## 🖥️ `web-ui/`
+User interaction
+Application interface
+Communicating with backend services
+Presenting application data
+Providing the client-side experience
+⚙️ API
 
-Contains the frontend portion of the application.
+The api directory contains the backend/API portion of the application.
 
-Responsibilities include:
-
-* User interface
-* User interaction
-* Frontend application logic
-* API communication
-* Displaying application information
-
----
-
-## ⚙️ `api/`
-
-Contains the backend/API component.
-
-Responsibilities include:
-
-* Backend application logic
-* API communication
-* Processing application requests
-* Providing services to the frontend
-
-The communication flow is:
-
-```text
-Frontend
+The backend acts as the communication layer between the user interface and application services.
+Web UI
    │
-   │ HTTP / API
+   │ HTTP / API Requests
    ▼
-Backend API
-```
+API
+   │
+   ▼
+Application Services
 
----
+🐳 Containerization
 
-## ☸️ `k8s/`
+The application follows a container-oriented architecture.
 
-Contains Kubernetes-related resources.
+Containerization provides:
 
-These resources can be used to deploy and manage application components in a Kubernetes environment.
+Consistent development environments
+Portable application execution
+Isolation between services
+Simplified deployment
+Reproducible application environments
 
-Kubernetes provides capabilities such as:
+Docker can be used to package application components into deployable containers.
 
-* Container orchestration
-* Service management
-* Workload management
-* Scaling
-* Deployment management
+☸️ Kubernetes
 
----
+The k8s directory contains Kubernetes-related deployment resources.
 
-## 📚 `docs/`
+Kubernetes provides the orchestration layer for the application.
 
-Contains project-related documentation and supporting materials.
-
----
-
-## 📄 `CLOUD-NATIVE.pdf`
-
-Contains supporting documentation related to the cloud-native implementation and project.
-
----
-
-# 🛠️ Technology Stack
-
-| Technology / Concept      | Purpose                              |
-| ------------------------- | ------------------------------------ |
-| Docker                    | Application containerization         |
-| Kubernetes                | Container orchestration              |
-| API                       | Backend communication                |
-| Web UI                    | Frontend interface                   |
-| Git                       | Version control                      |
-| GitHub                    | Source-code management               |
-| DevOps                    | Development and deployment practices |
-| Cloud-Native Architecture | Application deployment model         |
-
----
-
-# 🐳 Containerization
-
-Containerization allows the application to run in isolated and reproducible environments.
-
-A typical container workflow is:
-
-```text
-Application Source
-       │
-       ▼
- Dockerfile
-       │
-       ▼
- Docker Image
-       │
-       ▼
- Container
-       │
-       ▼
- Deployment
-```
-
-### Benefits
-
-* Portable environments
-* Consistent execution
-* Application isolation
-* Reproducible deployments
-* Easier application distribution
-
----
-
-# ☸️ Kubernetes Architecture
-
-The Kubernetes deployment can be represented as:
-
-```text
-                 Kubernetes Cluster
-                         │
-              ┌──────────┴──────────┐
-              │                     │
-              ▼                     ▼
-       Frontend Workload      Backend Workload
-              │                     │
-              ▼                     ▼
-          Web UI Pods            API Pods
-              │                     │
-              └──────────┬──────────┘
+The deployment architecture can be represented as:
+                    Kubernetes Cluster
+                           │
+              ┌────────────┴────────────┐
+              │                         │
+        Frontend Service          Backend Service
+              │                         │
+              ▼                         ▼
+          Web UI Pods                API Pods
+Kubernetes enables the application to be managed using declarative deployment configurations.
+🔄 Cloud-Native Workflow
+                    Source Code
                          │
                          ▼
-                    Kubernetes
-                     Services
-```
-
-Kubernetes can manage the application workloads and expose them through Kubernetes services.
-
----
-
-# 🔄 Cloud-Native Deployment Workflow
-
-```text
-                  Source Code
-                       │
-                       ▼
-                Application Build
-                       │
-                       ▼
-                Docker Image
-                       │
-                       ▼
-              Container Registry
-                       │
-                       ▼
-            Kubernetes Deployment
-                       │
-                       ▼
+                 Application Build
+                         │
+                         ▼
+                  Docker Image
+                         │
+                         ▼
+                 Container Registry
+                         │
+                         ▼
+               Kubernetes Deployment
+                         │
+                         ▼
                    Running Pods
-                       │
-                       ▼
-                  Kubernetes
-                   Services
-                       │
-                       ▼
-                     Users
-```
+                         │
+                         ▼
+                     Services
+                         │
+                         ▼
+                       Users
 
----
+📚 Documentation
 
-# 🚀 Getting Started
+Additional project documentation is available in:
 
-## 1. Clone the Repository
+docs/
 
-```bash
+The repository also includes:
+
+CLOUD-NATIVE.pdf
+
+which contains supporting documentation for the cloud-native project.
+
+🛠️ Technologies
+
+The project demonstrates concepts related to:
+
+Technology / Concept	Purpose
+Docker	Application containerization
+Kubernetes	Container orchestration
+Cloud-Native Architecture	Application deployment model
+API	Backend communication
+Web UI	Frontend interface
+GitHub	Source-code management
+DevOps	Development and deployment workflow
+🧩 Repository Organization
+
+The project follows a modular structure:
+
+Frontend
+   │
+   │
+   ▼
+Web UI
+   │
+   ▼
+Backend API
+   │
+   ▼
+Containerization
+   │
+   ▼
+Kubernetes
+   │
+   ▼
+Cloud-Native Deployment
+
+This separation makes the project easier to develop, test, deploy, and maintain.
+
+⚡ Getting Started
+1. Clone the Repository
 git clone https://github.com/Abhiraami27/kitchen-app.git
-```
-
-Navigate into the project:
-
-```bash
 cd kitchen-app
-```
-
----
-
-# 📁 Explore the Project
-
-The main application components are located in:
-
-```text
+2. Explore the Project
 api/
 web-ui/
 k8s/
 docs/
-```
 
----
+The application is separated into frontend, backend, deployment, and documentation components.
 
-# 🐳 Docker Setup
+🐳 Docker
 
-If Docker configuration is provided inside the application components, build the required container images using the corresponding Docker configuration.
+If Docker configuration is provided inside the respective application directories, build the required application images using the Docker configuration included with the project.
 
-A typical Docker workflow is:
+A typical workflow is:
 
-```bash
 docker build -t kitchen-app .
-```
 
-Run the generated container according to the project's configuration.
+Then run the generated container according to the application's configuration.
 
-> Refer to the Docker configuration provided in the project before running the application.
+Refer to the project-specific configuration inside api/ and web-ui/ before running production deployments.
 
----
+☸️ Kubernetes Deployment
 
-# ☸️ Kubernetes Deployment
+Kubernetes configuration files are located inside:
 
-Kubernetes configuration files are available inside:
-
-```text
 k8s/
-```
 
-A typical deployment command is:
+A typical Kubernetes workflow is:
 
-```bash
 kubectl apply -f k8s/
-```
 
-Check the deployed pods:
+Check the deployed resources:
 
-```bash
 kubectl get pods
-```
-
-Check Kubernetes services:
-
-```bash
 kubectl get services
-```
 
-Check deployments:
+Use the manifests provided in the repository and adjust environment-specific configuration before deployment.
 
-```bash
-kubectl get deployments
-```
+🔧 Development Workflow
 
-> Kubernetes manifests should be reviewed and configured according to the target environment before production deployment.
+A typical development workflow for this project is:
 
----
+1. Develop
+      ↓
+2. Test
+      ↓
+3. Build
+      ↓
+4. Containerize
+      ↓
+5. Deploy
+      ↓
+6. Monitor
+      ↓
+7. Update
 
-# 🔧 Development Workflow
+Git and GitHub can be used for version control and collaborative development.
 
-The project follows a cloud-native development workflow:
+📦 Deployment Model
 
-```text
-       Develop
-          │
-          ▼
-        Test
-          │
-          ▼
-        Build
-          │
-          ▼
-     Containerize
-          │
-          ▼
-       Deploy
-          │
-          ▼
-       Monitor
-          │
-          ▼
-        Update
-```
+The project demonstrates the transition from a traditional application structure to a cloud-native deployment model.
 
-Git and GitHub can be used to maintain source-code versions and collaborate on development.
+Traditional Application
 
----
-
-# 📦 Deployment Model
-
-## Traditional Application
-
-```text
         Application
              │
              ▼
-      Single Environment
-```
+       Single Environment
 
-## Cloud-Native Application
 
-```text
-                ┌──────────────┐
-                │    Web UI    │
-                └──────┬───────┘
-                       │
-                       ▼
-                ┌──────────────┐
-                │     API      │
-                └──────┬───────┘
-                       │
-                       ▼
-                ┌──────────────┐
-                │  Containers  │
-                └──────┬───────┘
-                       │
-                       ▼
-                ┌──────────────┐
-                │ Kubernetes   │
-                └──────┬───────┘
-                       │
-                       ▼
-                Cloud Environment
-```
+Cloud-Native Application
 
----
-
-# 🎯 Project Objectives
+        ┌──────────────┐
+        │    Web UI    │
+        └──────┬───────┘
+               │
+               ▼
+        ┌──────────────┐
+        │     API      │
+        └──────┬───────┘
+               │
+               ▼
+        ┌──────────────┐
+        │ Containers   │
+        └──────┬───────┘
+               │
+               ▼
+        ┌──────────────┐
+        │ Kubernetes   │
+        └──────────────┘
+🎯 Objectives
 
 The project demonstrates practical implementation of:
 
-* Cloud-native application architecture
-* Frontend/backend separation
-* API-based communication
-* Docker containerization
-* Kubernetes orchestration
-* Deployment configuration
-* DevOps practices
-* Scalable application architecture
-* Infrastructure configuration
-* Version-controlled development
+Cloud-native application architecture
+Frontend/backend separation
+API-based communication
+Containerization
+Kubernetes orchestration
+Deployment automation concepts
+Infrastructure configuration
+DevOps practices
+Application scalability concepts
+📈 Future Enhancements
 
----
+Potential enhancements include:
 
-# 📊 Cloud-Native Concepts Demonstrated
-
-### 1. Containerization
-
-Packaging application components into portable containers.
-
-### 2. Service Separation
-
-Separating frontend and backend components.
-
-### 3. Orchestration
-
-Using Kubernetes to manage containerized workloads.
-
-### 4. Declarative Deployment
-
-Using configuration files to describe application deployment requirements.
-
-### 5. Scalability
-
-Designing the application so components can be managed independently.
-
-### 6. Portability
-
-Using containers to provide consistent execution environments.
-
----
-
-# 🔐 Security Considerations
-
-For production deployment, the following practices should be followed:
-
-* Never commit API keys or passwords
-* Store secrets using secure secret-management mechanisms
-* Use Kubernetes Secrets for sensitive configuration
-* Restrict container permissions
-* Keep dependencies updated
-* Use HTTPS/TLS for production traffic
-* Apply appropriate network policies
-* Follow least-privilege access principles
-
----
-
-# 📈 Future Enhancements
-
-Potential improvements include:
-
-* 🔄 CI/CD pipeline integration
-* ☁️ Cloud deployment
-* 📊 Application monitoring
-* 📈 Horizontal scaling
-* 🔐 Authentication and authorization
-* 🔒 Kubernetes Secret management
-* 🩺 Health checks and readiness probes
-* 📦 Container registry integration
-* 🔁 Automated rolling deployments
-* 📡 Centralized logging
-* 📊 Metrics and observability
-* 🌐 Kubernetes Ingress
-* 🛡️ Network policies
-* ⚡ Automated testing
-* 🤖 Infrastructure automation
-
----
-
-# 📚 Documentation
-
-Additional documentation can be found in:
-
-```text
-docs/
-```
-
-The project also contains:
-
-```text
-CLOUD-NATIVE.pdf
-```
-
-which provides supporting information about the cloud-native project.
-
----
-
-# 📁 Repository Resources
-
-| Resource                   | Location           |
-| -------------------------- | ------------------ |
-| Backend / API              | `api/`             |
-| Frontend                   | `web-ui/`          |
-| Kubernetes                 | `k8s/`             |
-| Documentation              | `docs/`            |
-| Cloud-Native Documentation | `CLOUD-NATIVE.pdf` |
-| GitHub Workflows           | `.github/`         |
-| Main Documentation         | `README.md`        |
-
----
-
-# 🌐 Repository
-
-**GitHub:**
-[https://github.com/Abhiraami27/kitchen-app](https://github.com/Abhiraami27/kitchen-app)
-
----
-
-# 👩‍💻 Author
-
-## Abhiraami SP
+🔄 CI/CD pipeline integration
+📊 Application monitoring
+📈 Horizontal scaling
+🔐 Authentication and authorization
+🔒 Secure secret management
+☁️ Cloud deployment
+📦 Container registry integration
+🩺 Kubernetes health checks
+🔁 Automated rolling deployments
+📡 Centralized logging
+📊 Metrics and observability
+🌐 Ingress-based routing
+📁 Project Resources
+Resource	Location
+Backend / API	api/
+Frontend	web-ui/
+Kubernetes	k8s/
+Documentation	docs/
+Cloud-Native Documentation	CLOUD-NATIVE.pdf
+GitHub Repository	Abhiraami27/kitchen-app
+👩‍💻 Author
+Abhiraami SP
 
 GitHub:
 
-[https://github.com/Abhiraami27](https://github.com/Abhiraami27)
+https://github.com/Abhiraami27
 
----
+⭐ Project
 
-# ⭐ Support
-
-If you find this project useful or interesting, consider giving the repository a ⭐ on GitHub.
-
----
-
-<p align="center">
-
-## 🍳 Cloud Native Kitchen App
-
-<b>Built with Cloud-Native, Containerization, Kubernetes & DevOps principles.</b>
-
-</p>
-
----
-
-<p align="center">
-  <i>Develop • Containerize • Orchestrate • Deploy</i>
-</p>
-```
-
-### GitHub description
-
-Also set the repository **About/Description** to:
-
-```text
-Cloud-native kitchen application demonstrating containerization, API-driven architecture, Kubernetes orchestration, and DevOps deployment practices.
-```
-
-
+If you find this project useful, consider giving the repository a ⭐ on GitHub.
